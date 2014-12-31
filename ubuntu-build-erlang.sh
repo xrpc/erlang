@@ -42,7 +42,7 @@ wget http://www.erlang.org/download/otp_src_17.4.tar.gz
 fi
 tar -xvzf otp_src_17.4.tar.gz
 chmod -R 777 otp_src_17.4
-mv otp_src_14.4 erlang
+mv otp_src_17.4 erlang
 cd erlang
 ./configure
 make
