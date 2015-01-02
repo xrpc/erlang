@@ -33,16 +33,15 @@ apt-get -y install libssh-dev
 # ODBC support (libltdl3-dev odbcinst1debian2 unixodbc)
 apt-get -y install unixodbc-dev
 
-# mkdir -p ~/code/erlang
-# cd ~/code/erlang
-if [ -e otp_src_17.4.tar.gz ]; then
-echo "Good! 'otp_src_17.4.tar.gz' already exists. Skipping download."
+# Se pasa a instalar Erlang
+if [ -e otp_src_17.0.tar.gz ]; then
+echo "Good! 'otp_src_17.0.tar.gz' already exists. Skipping download."
 else
-wget http://www.erlang.org/download/otp_src_17.4.tar.gz
+wget http://www.erlang.org/download/otp_src_17.0.tar.gz
 fi
-tar -xvzf otp_src_17.4.tar.gz
-chmod -R 777 otp_src_17.4
-mv otp_src_17.4 erlang
+tar -xvzf otp_src_17.0.tar.gz
+# chmod -R 777 otp_src_17.0
+mv otp_src_17.0 erlang
 cd erlang
 ./configure
 make
