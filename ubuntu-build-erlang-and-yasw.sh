@@ -50,6 +50,34 @@ make install
 
 cd ..
 
+##################################################################
+# YAWS Installation
 
+apt-get -y install libpam0g-dev
+
+apt-get -y install cadaver
+
+if [ -e yaws-1.99.tar.gz ]; then
+echo "Good! 'yaws-1.99.tar.gz' already exists. Skipping download."
+else
+wget http://yaws.hyber.org/download/yaws-1.99.tar.gz
+fi
+
+tar -xvzf yaws-1.99.tar.gz
+
+mv yaws-1.99.tar.gz yaws
+
+cd yaws
+
+# Solo se realiza cuando se descarga con git
+# autoreconf -fi
+
+./configure --sysconfdir=/etc
+make 
+make install
+
+yaws --daemon --heart
+
+cd ..
 
 exit 0 
